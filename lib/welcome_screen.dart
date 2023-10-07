@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:quiz_app/app_container_screen.dart';
+import 'package:quiz_app/constants.dart';
+import 'package:quiz_app/constants.dart';
+
+class WelcomeScreen extends StatelessWidget {
+  // final VoidCallbackAction startQuizButtonHandlers;
+  final void Function(ScreenType) startQuizButtonHandler;
+
+  const WelcomeScreen({super.key, required this.startQuizButtonHandler});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: homeScreenQuizLogoWidth,
+          ),
+          const SizedBox(
+            height: homeScreenChildrenSpacing,
+          ),
+          const Text(
+            "Learn Flutter the fun way",
+            style: TextStyle(color: Colors.white, fontSize: 22),
+          ),
+          const SizedBox(
+            height: homeScreenChildrenSpacing,
+          ),
+          OutlinedButton(
+            onPressed: () => startQuizButtonHandler(ScreenType.quizScreen),
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Colors.white),
+            ),
+            child: const Text(
+              "Start quiz",
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
