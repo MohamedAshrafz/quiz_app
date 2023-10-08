@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/constants.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -15,7 +16,7 @@ class QuizScreenState extends State<QuizScreen> {
       "hi there from the quiz screen",
       style: TextStyle(
         color: Colors.white,
-        fontSize: 20,
+        fontSize: normalFontSize,
       ),
     ));
   }

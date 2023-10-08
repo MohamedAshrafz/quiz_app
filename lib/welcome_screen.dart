@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/app_container_screen.dart';
 import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   // final VoidCallbackAction startQuizButtonHandlers;
@@ -24,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
           const Text(
             "Learn Flutter the fun way",
-            style: TextStyle(color: Colors.white, fontSize: 22),
+            style: TextStyle(color: Colors.white, fontSize: mainTitleFontSize),
           ),
           const SizedBox(
             height: homeScreenChildrenSpacing,
@@ -36,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
             child: const Text(
               "Start quiz",
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: buttonTextsNormalFontSize),
             ),
           ),
         ],
