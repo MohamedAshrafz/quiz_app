@@ -18,7 +18,7 @@ const appBoxDecoration = BoxDecoration(
 const double homeScreenChildrenSpacing = 25.0;
 const double homeScreenQuizLogoWidth = 250.0;
 
-const double normalFontSize = 15;
+const double normalFontSize = 18;
 const double mainTitleFontSize = 25;
 
 const double buttonTextsNormalFontSize = 18;
