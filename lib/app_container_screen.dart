@@ -4,17 +4,17 @@ import 'package:quiz_app/quiz_screen.dart';
 import 'package:quiz_app/result_screen.dart';
 import 'package:quiz_app/welcome_screen.dart';
 
+enum ScreenType {
+  homeScreen,
+  quizScreen,
+  resultScreen,
+}
+
 class AppContainerScreen extends StatefulWidget {
   const AppContainerScreen({super.key});
 
   @override
   State<StatefulWidget> createState() => AppContainerScreenState();
-}
-
-enum ScreenType {
-  homeScreen,
-  quizScreen,
-  resultScreen,
 }
 
 class AppContainerScreenState extends State<AppContainerScreen> {
