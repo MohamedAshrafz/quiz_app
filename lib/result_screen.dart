@@ -15,7 +15,7 @@ class ResultScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           const Text(
-            "congratulations, result screen is here",
+            "Congratulations, result screen is here",
             style: TextStyle(
               color: Colors.white,
               fontSize: normalFontSize,
