@@ -17,6 +17,25 @@ enum ScreenType {
   resultScreen,
 }
 
+class ScreenTypeClass {
+  ScreenTypeClass({required this.screenType, required this.handler}) {
+    switch (screenType) {
+      case ScreenType.homeScreen:
+        widget = WelcomeScreen(startQuizButtonHandler: handler);
+
+      case ScreenType.quizScreen:
+        widget = QuizScreen(startQuizButtonHandler: handler);
+
+      case ScreenType.resultScreen:
+        widget = ResultScreen(startQuizButtonHandler: handler);
+    }
+  }
+
+  final ScreenType screenType;
+  late Widget widget;
+  final void Function(ScreenType) handler;
+}
+
 class AppContainerScreenState extends State<AppContainerScreen> {
   ScreenType currentScreenType = ScreenType.homeScreen;
 
@@ -28,25 +47,8 @@ class AppContainerScreenState extends State<AppContainerScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
-    Widget currentScreenWidget;
-    switch (currentScreenType) {
-      case ScreenType.homeScreen:
-        currentScreenWidget = WelcomeScreen(
-          startQuizButtonHandler: startQuizHandler,
-        );
-
-      case ScreenType.quizScreen:
-        currentScreenWidget = QuizScreen(
-          startQuizButtonHandler: startQuizHandler,
-        );
-
-      case ScreenType.resultScreen:
-        currentScreenWidget = ResultScreen(
-          startQuizButtonHandler: startQuizHandler,
-        );
-    }
+    Widget currentScreenWidget =
+        ScreenTypeClass(screenType: currentScreenType, handler: startQuizHandler).widget;
 
     return Scaffold(
       body: Container(
