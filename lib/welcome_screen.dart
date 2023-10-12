@@ -17,6 +17,7 @@ class WelcomeScreen extends StatelessWidget {
           Image.asset(
             "assets/images/quiz-logo.png",
             width: homeScreenQuizLogoWidth,
+            color: const Color.fromARGB(200, 255, 255, 255),
           ),
           const SizedBox(
             height: homeScreenChildrenSpacing,
