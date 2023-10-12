@@ -28,13 +28,15 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: homeScreenChildrenSpacing,
           ),
-          OutlinedButton(
+          OutlinedButton.icon(
             onPressed: () => startQuizButtonHandler(ScreenType.quizScreen),
             style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
               side: const BorderSide(color: Colors.white),
             ),
-            child: const Text(
-              "Start quiz",
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text(
+              "start quiz",
               style: TextStyle(color: Colors.white, fontSize: buttonTextsNormalFontSize),
             ),
           ),
