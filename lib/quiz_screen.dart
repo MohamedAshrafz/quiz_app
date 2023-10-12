@@ -31,7 +31,7 @@ class QuizScreenState extends State<QuizScreen> {
               side: const BorderSide(color: Colors.white),
             ),
             child: const Text(
-              "Quiz result",
+              "quiz result",
               style: TextStyle(color: Colors.white, fontSize: buttonTextsNormalFontSize),
             ),
           ),

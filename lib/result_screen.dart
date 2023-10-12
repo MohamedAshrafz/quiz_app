@@ -27,7 +27,7 @@ class ResultScreen extends StatelessWidget {
               side: const BorderSide(color: Colors.white),
             ),
             child: const Text(
-              "Start quiz",
+              "home screen",
               style: TextStyle(color: Colors.white, fontSize: buttonTextsNormalFontSize),
             ),
           ),
