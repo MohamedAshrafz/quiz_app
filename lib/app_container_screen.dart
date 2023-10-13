@@ -26,18 +26,11 @@ class AppContainerScreenState extends State<AppContainerScreen> {
     });
   }
 
-  /// get executed after the initialization of all instance variables and methods
-  // @override
-  // void initState() {
-  //   //  implement initState
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
 
 
-    Widget currentScreenWidget;
+    final Widget currentScreenWidget;
     switch (currentScreenType) {
       case ScreenType.homeScreen:
         currentScreenWidget = WelcomeScreen(
