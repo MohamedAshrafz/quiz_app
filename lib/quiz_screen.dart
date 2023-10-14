@@ -20,27 +20,27 @@ class QuizScreen extends StatefulWidget {
 }
 
 class QuizScreenState extends State<QuizScreen> {
-  int questionNumber = 0;
+  int questionIndex = 0;
 
   void nextQuestionHandler(int answerIndex) {
     setState(() {
-      if (questionNumber < questionsList.length) {
-        widget.answers[questionNumber] = answerIndex;
-        questionNumber++;
+      if (questionIndex < questionsList.length) {
+        widget.answers[questionIndex] = answerIndex;
+        questionIndex++;
       }
     });
 
     /// if the question number is equal to questionsList.length
     /// do not update this screen but force the update of the parent screen AppContainerScreen
-    if (questionNumber == questionsList.length) {
-      questionNumber = 0;
+    if (questionIndex == questionsList.length) {
+      questionIndex = 0;
       widget.toResultScreenHandler(ScreenType.resultScreen);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    QuizQuestion currentQuestion = questionsList[questionNumber];
+    QuizQuestion currentQuestion = questionsList[questionIndex];
 
     return Center(
       child: Column(
