@@ -30,10 +30,10 @@ class QuizScreenState extends State<QuizScreen> {
       }
     });
 
-    /// if the question number is equal to questionsList.length
+    /// if the question number is equal to questionsList.length (questions are exhausted)
     /// do not update this screen but force the update of the parent screen AppContainerScreen
+    /// to the next screen ResultScreen
     if (questionIndex == questionsList.length) {
-      questionIndex = 0;
       widget.onQuestionsExhausted(ScreenType.resultScreen);
     }
   }
@@ -52,7 +52,7 @@ class QuizScreenState extends State<QuizScreen> {
             style: GoogleFonts.lato(
               color: textColor,
               fontSize: questionTitleFontSize,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: questionTitleSpacing),
@@ -79,7 +79,7 @@ class QuizScreenState extends State<QuizScreen> {
                 ),
               );
             },
-          )
+          ),
         ],
       ),
     );

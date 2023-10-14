@@ -11,8 +11,6 @@ enum ScreenType {
   resultScreen,
 }
 
-List<int> _clearList(int length) => List<int>.filled(length, -1);
-
 class AppContainerScreen extends StatefulWidget {
   const AppContainerScreen({super.key});
 
@@ -22,22 +20,21 @@ class AppContainerScreen extends StatefulWidget {
 
 class AppContainerScreenState extends State<AppContainerScreen> {
   ScreenType currentScreenType = ScreenType.welcomeScreen;
-  List<int> mainAnswersList = _clearList(questionsList.length);
+  List<int> mainAnswersList = List<int>.filled(questionsList.length, -1);
 
   void chooseScreenHandler(ScreenType screenTypeArg) {
     setState(() {
       currentScreenType = screenTypeArg;
+
       /// the the next screen is the home screen this means the app was reset
-      if(screenTypeArg == ScreenType.welcomeScreen){
-        mainAnswersList = _clearList(questionsList.length);
+      if (screenTypeArg == ScreenType.welcomeScreen) {
+        mainAnswersList = List<int>.filled(questionsList.length, -1);
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
-
     final Widget currentScreenWidget;
     switch (currentScreenType) {
       case ScreenType.welcomeScreen:
