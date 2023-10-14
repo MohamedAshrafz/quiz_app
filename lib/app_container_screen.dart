@@ -6,7 +6,7 @@ import 'package:quiz_app/result_screen.dart';
 import 'package:quiz_app/welcome_screen.dart';
 
 enum ScreenType {
-  homeScreen,
+  welcomeScreen,
   quizScreen,
   resultScreen,
 }
@@ -21,14 +21,14 @@ class AppContainerScreen extends StatefulWidget {
 }
 
 class AppContainerScreenState extends State<AppContainerScreen> {
-  ScreenType currentScreenType = ScreenType.homeScreen;
+  ScreenType currentScreenType = ScreenType.welcomeScreen;
   List<int> mainAnswersList = _clearList(questionsList.length);
 
   void nextScreenHandler(ScreenType screenTypeArg) {
     setState(() {
       currentScreenType = screenTypeArg;
       /// the the next screen is the home screen this means the app was reset
-      if(screenTypeArg == ScreenType.homeScreen){
+      if(screenTypeArg == ScreenType.welcomeScreen){
         mainAnswersList = _clearList(questionsList.length);
       }
     });
@@ -40,7 +40,7 @@ class AppContainerScreenState extends State<AppContainerScreen> {
 
     final Widget currentScreenWidget;
     switch (currentScreenType) {
-      case ScreenType.homeScreen:
+      case ScreenType.welcomeScreen:
         currentScreenWidget = WelcomeScreen(
           startQuizButtonHandler: nextScreenHandler,
         );

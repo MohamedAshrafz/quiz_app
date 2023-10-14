@@ -68,7 +68,9 @@ class QuizScreenState extends State<QuizScreen> {
                 child: ElevatedButton(
                   onPressed: () => nextQuestionHandler(answerIndex),
                   style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: quizButtonPadding),
                     backgroundColor: primaryButtonsColor,
+                    shape: generalButtonShape,
                   ),
                   child: Text(
                     choice,

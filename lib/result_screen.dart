@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/main_screens_button.dart';
 
 import 'app_container_screen.dart';
 import 'constants.dart';
@@ -27,17 +28,11 @@ class ResultScreen extends StatelessWidget {
             ),
           ),
           ...finalAnswers.map((ans) => Text(ans.toString())),
-          OutlinedButton.icon(
-            onPressed: () => startQuizButtonHandler(ScreenType.homeScreen),
-            style: OutlinedButton.styleFrom(
-              foregroundColor: textColor,
-              side: const BorderSide(color: textColor),
-            ),
-            icon: const Icon(Icons.refresh_rounded),
-            label: const Text(
-              "reset quiz",
-              style: TextStyle(color: textColor, fontSize: mainButtonsFontSize),
-            ),
+          MainScreenButton(
+            buttonText: "reset quiz",
+            buttonHandler: startQuizButtonHandler,
+            nextScreenType: ScreenType.welcomeScreen,
+            buttonIconData: Icons.refresh_rounded,
           ),
         ],
       ),

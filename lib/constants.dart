@@ -20,8 +20,10 @@ const Color textColor = Color.fromARGB(255, 234, 219, 245);
 
 const double homeScreenChildrenSpacing = 25.0;
 const double questionTitleSpacing = 25.0;
-const double homeScreenQuizLogoWidth = 270.0;
 
+const double quizButtonPadding = 10.0;
+
+const double homeScreenQuizLogoWidth = 270.0;
 const double questionButtonsWidth = 300.0;
 
 const double questionTitleFontSize = 20;
@@ -29,3 +31,5 @@ const double mainTitleFontSize = 25;
 
 const double mainButtonsFontSize = 18;
 const double questionsButtonsFontSize = 15;
+
+OutlinedBorder generalButtonShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5));
