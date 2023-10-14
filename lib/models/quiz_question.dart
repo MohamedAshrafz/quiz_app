@@ -12,4 +12,10 @@ class QuizQuestion {
     // required this.choicesScore,
     // this.buttonsColor = const [],
   });
+
+  List<String> getShuffledList(){
+    final List<String> shuffledChoicesList = List<String>.of(choices);
+    shuffledChoicesList.shuffle();
+    return shuffledChoicesList;
+  }
 }

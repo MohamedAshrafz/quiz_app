@@ -1,12 +1,9 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/question_list.dart';
 import 'package:quiz_app/models/quiz_question.dart';
 import 'app_container_screen.dart';
 import 'constants.dart';
-
-final Random rand = Random();
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({
@@ -44,8 +41,6 @@ class QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     QuizQuestion currentQuestion = questionsList[questionNumber];
-    List<String> shuffledChoicesList = List<String>.of(currentQuestion.choices);
-    shuffledChoicesList.shuffle(rand);
 
     return Center(
       child: Column(
@@ -60,7 +55,7 @@ class QuizScreenState extends State<QuizScreen> {
             ),
           ),
           const SizedBox(height: questionTitleSpacing),
-          ...shuffledChoicesList.map(
+          ...currentQuestion.getShuffledList().map(
             (choice) {
               int answerIndex = currentQuestion.choices.indexOf(choice);
               return SizedBox(
