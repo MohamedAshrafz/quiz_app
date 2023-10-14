@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/app_container_screen.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/main_screens_button.dart';
@@ -23,9 +24,13 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: homeScreenChildrenSpacing,
           ),
-          const Text(
+          Text(
             "Learn Flutter the fun way",
-            style: TextStyle(color: textColor, fontSize: mainTitleFontSize),
+            style: GoogleFonts.lato(
+              color: textColor,
+              fontSize: mainTitleFontSize,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(
             height: homeScreenChildrenSpacing,

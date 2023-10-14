@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/question_list.dart';
 import 'package:quiz_app/models/quiz_question.dart';
 import 'app_container_screen.dart';
@@ -49,9 +49,10 @@ class QuizScreenState extends State<QuizScreen> {
           Text(
             currentQuestion.questionText,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: GoogleFonts.lato(
               color: textColor,
               fontSize: questionTitleFontSize,
+              fontWeight: FontWeight.bold
             ),
           ),
           const SizedBox(height: questionTitleSpacing),
