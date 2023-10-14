@@ -17,14 +17,14 @@ class WelcomeScreen extends StatelessWidget {
           Image.asset(
             "assets/images/quiz-logo.png",
             width: homeScreenQuizLogoWidth,
-            color: const Color.fromARGB(200, 255, 255, 255),
+            color: const Color.fromARGB(190, 255, 255, 255),
           ),
           const SizedBox(
             height: homeScreenChildrenSpacing,
           ),
           const Text(
             "Learn Flutter the fun way",
-            style: TextStyle(color: Colors.white, fontSize: mainTitleFontSize),
+            style: TextStyle(color: textColor, fontSize: mainTitleFontSize),
           ),
           const SizedBox(
             height: homeScreenChildrenSpacing,
@@ -32,13 +32,13 @@ class WelcomeScreen extends StatelessWidget {
           OutlinedButton.icon(
             onPressed: () => startQuizButtonHandler(ScreenType.quizScreen),
             style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              side: const BorderSide(color: Colors.white),
+              foregroundColor: textColor,
+              side: const BorderSide(color: textColor),
             ),
             icon: const Icon(Icons.arrow_right_alt),
             label: const Text(
               "start quiz",
-              style: TextStyle(color: Colors.white, fontSize: buttonTextsNormalFontSize),
+              style: TextStyle(color: textColor, fontSize: mainButtonsFontSize),
             ),
           ),
         ],
