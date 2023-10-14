@@ -5,9 +5,9 @@ import 'package:quiz_app/main_screens_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   // final VoidCallbackAction startQuizButtonHandlers;
-  final void Function(ScreenType) startQuizButtonHandler;
+  final void Function(ScreenType) onStartQuiz;
 
-  const WelcomeScreen({super.key, required this.startQuizButtonHandler});
+  const WelcomeScreen({super.key, required this.onStartQuiz});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
           MainScreenButton(
             buttonText: "start quiz",
-            buttonHandler: startQuizButtonHandler,
+            onButtonPressed: onStartQuiz,
             nextScreenType: ScreenType.quizScreen,
             buttonIconData: Icons.arrow_right_alt,
           ),

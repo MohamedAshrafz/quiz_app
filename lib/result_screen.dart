@@ -7,11 +7,11 @@ import 'constants.dart';
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
-    required this.startQuizButtonHandler,
+    required this.onResetQuiz,
     required this.finalAnswers,
   });
 
-  final void Function(ScreenType) startQuizButtonHandler;
+  final void Function(ScreenType) onResetQuiz;
   final List<int> finalAnswers;
 
   @override
@@ -30,7 +30,7 @@ class ResultScreen extends StatelessWidget {
           ...finalAnswers.map((ans) => Text(ans.toString())),
           MainScreenButton(
             buttonText: "reset quiz",
-            buttonHandler: startQuizButtonHandler,
+            onButtonPressed: onResetQuiz,
             nextScreenType: ScreenType.welcomeScreen,
             buttonIconData: Icons.refresh_rounded,
           ),

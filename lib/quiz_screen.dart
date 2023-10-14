@@ -8,11 +8,11 @@ import 'constants.dart';
 class QuizScreen extends StatefulWidget {
   const QuizScreen({
     super.key,
-    required this.toResultScreenHandler,
+    required this.onQuestionsExhausted,
     required this.answers,
   });
 
-  final void Function(ScreenType) toResultScreenHandler;
+  final void Function(ScreenType) onQuestionsExhausted;
   final List<int> answers;
 
   @override
@@ -34,7 +34,7 @@ class QuizScreenState extends State<QuizScreen> {
     /// do not update this screen but force the update of the parent screen AppContainerScreen
     if (questionIndex == questionsList.length) {
       questionIndex = 0;
-      widget.toResultScreenHandler(ScreenType.resultScreen);
+      widget.onQuestionsExhausted(ScreenType.resultScreen);
     }
   }
 

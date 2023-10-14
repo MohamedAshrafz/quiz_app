@@ -24,7 +24,7 @@ class AppContainerScreenState extends State<AppContainerScreen> {
   ScreenType currentScreenType = ScreenType.welcomeScreen;
   List<int> mainAnswersList = _clearList(questionsList.length);
 
-  void nextScreenHandler(ScreenType screenTypeArg) {
+  void chooseScreenHandler(ScreenType screenTypeArg) {
     setState(() {
       currentScreenType = screenTypeArg;
       /// the the next screen is the home screen this means the app was reset
@@ -42,18 +42,18 @@ class AppContainerScreenState extends State<AppContainerScreen> {
     switch (currentScreenType) {
       case ScreenType.welcomeScreen:
         currentScreenWidget = WelcomeScreen(
-          startQuizButtonHandler: nextScreenHandler,
+          onStartQuiz: chooseScreenHandler,
         );
 
       case ScreenType.quizScreen:
         currentScreenWidget = QuizScreen(
-          toResultScreenHandler: nextScreenHandler,
+          onQuestionsExhausted: chooseScreenHandler,
           answers: mainAnswersList,
         );
 
       case ScreenType.resultScreen:
         currentScreenWidget = ResultScreen(
-          startQuizButtonHandler: nextScreenHandler,
+          onResetQuiz: chooseScreenHandler,
           finalAnswers: mainAnswersList,
         );
     }
