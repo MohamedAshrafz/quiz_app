@@ -26,7 +26,7 @@ class MainScreenButton extends StatelessWidget {
         side: const BorderSide(color: textColor),
         shape: generalButtonShape,
       ),
-      icon: const Icon(Icons.refresh_rounded),
+      icon: Icon(buttonIconData),
       label: Text(
         buttonText,
         style: const TextStyle(color: textColor, fontSize: mainButtonsFontSize),
