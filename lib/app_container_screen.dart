@@ -60,7 +60,7 @@ class AppContainerScreenState extends State<AppContainerScreen> {
 
     return Scaffold(
       body: Container(
-        alignment: Alignment.center,
+        // alignment: Alignment.center,
         decoration: appBoxDecoration,
         child: currentScreenWidget,
       ),

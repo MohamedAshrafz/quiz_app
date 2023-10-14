@@ -47,9 +47,11 @@ class QuizScreenState extends State<QuizScreen> {
     List<String> shuffledChoicesList = List<String>.of(currentQuestion.choices);
     shuffledChoicesList.shuffle(rand);
 
-    return Center(
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             currentQuestion.questionText,
@@ -67,9 +69,7 @@ class QuizScreenState extends State<QuizScreen> {
                 width: questionButtonsWidth,
                 child: ElevatedButton(
                   onPressed: () => nextQuestionHandler(answerIndex),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryButtonsColor,
-                  ),
+                  style: ElevatedButton.styleFrom(backgroundColor: primaryButtonsColor),
                   child: Text(
                     choice,
                     textAlign: TextAlign.center,
