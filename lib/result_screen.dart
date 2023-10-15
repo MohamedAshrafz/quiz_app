@@ -40,15 +40,17 @@ class ResultScreen extends StatelessWidget {
           Container(
             height: resultScreenListViewHeight,
             margin: const EdgeInsets.all(10),
-            child: ListView(
-              children: questionsList.map((q) {
-                int qIndex = questionsList.indexOf(q);
-                return ResultTuple(
-                  question: q,
-                  questionIndex: qIndex,
-                  answerIndex: finalAnswers[qIndex],
-                );
-              }).toList(),
+            child: SingleChildScrollView(
+              child: Column(
+                children: questionsList.map((q) {
+                  int qIndex = questionsList.indexOf(q);
+                  return ResultTuple(
+                    question: q,
+                    questionIndex: qIndex,
+                    answerIndex: finalAnswers[qIndex],
+                  );
+                }).toList(),
+              ),
             ),
           ),
           MainScreenButton(
