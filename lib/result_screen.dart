@@ -33,7 +33,7 @@ class ResultScreen extends StatelessWidget {
         children: [
           Text(
             "All done, you answered $numberOfCorrectAnswers"
-            " out of the ${finalAnswers.length} given questions correctly",
+            " out of ${finalAnswers.length} correctly",
             style: GoogleFonts.lato(
               color: textColor,
               fontSize: questionTitleFontSize,
@@ -42,7 +42,7 @@ class ResultScreen extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Container(
-            height: 350,
+            height: resultScreenListViewHeight,
             margin: const EdgeInsets.all(10),
             child: ListView(
               children: questionsList.map((q) {

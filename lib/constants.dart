@@ -29,11 +29,18 @@ const double quizButtonPadding = 10.0;
 
 const double homeScreenQuizLogoWidth = 270.0;
 const double questionButtonsWidth = 300.0;
+const double resultScreenListViewHeight = 350.0;
 
-const double questionTitleFontSize = 20;
-const double mainTitleFontSize = 25;
+const double questionTitleFontSize = 20.0;
+const double mainTitleFontSize = 25.0;
 
-const double mainButtonsFontSize = 18;
-const double questionsButtonsFontSize = 15;
+const double mainButtonsFontSize = 18.0;
+const double questionsButtonsFontSize = 15.0;
 
 OutlinedBorder generalButtonShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5));
+
+const double resultTupleCircleRadius = 20.0;
+
+const double resultTupleNumbersFontSize = 17.0;
+const double resultTupleFontSize = 14.0;
+const double resultTupleSmallFontSize = 13.0;

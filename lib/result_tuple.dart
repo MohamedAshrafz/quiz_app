@@ -21,25 +21,26 @@ class ResultTuple extends StatelessWidget {
     bool answeredRight = answerIndex == 0;
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 5),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 50,
-            width: 50,
+            /// width and height needs to be double of radius to fit the circle correctly
+            height: resultTupleCircleRadius * 2,
+            width: resultTupleCircleRadius * 2,
             margin: const EdgeInsets.only(right: 10),
             child: CustomPaint(
               painter: _CirclePainter(
-                radius: 25,
+                radius: resultTupleCircleRadius,
                 fillColor: answeredRight ? greenResult : redResult,
               ),
               child: Center(
                 child: Text(
-                  questionIndex.toString(),
+                  (questionIndex + 1).toString(),
                   style: GoogleFonts.lato(
                     color: const Color.fromARGB(191, 0, 0, 0),
-                    fontSize: questionTitleFontSize,
+                    fontSize: resultTupleNumbersFontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -55,7 +56,7 @@ class ResultTuple extends StatelessWidget {
                   question.questionText,
                   style: GoogleFonts.lato(
                     color: textColor,
-                    fontSize: questionsButtonsFontSize - 1,
+                    fontSize: resultTupleFontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -63,18 +64,20 @@ class ResultTuple extends StatelessWidget {
                   question.choices[answerIndex],
                   style: GoogleFonts.lato(
                     color: answeredRight ? greenResult : redResult,
-                    fontSize: questionsButtonsFontSize - 2,
+                    fontSize: resultTupleSmallFontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  question.choices[0],
-                  style: GoogleFonts.lato(
-                    color: greenResult,
-                    fontSize: questionsButtonsFontSize - 2,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                if (!answeredRight) ...{
+                  Text(
+                    question.choices[0],
+                    style: GoogleFonts.lato(
+                      color: greenResult,
+                      fontSize: resultTupleSmallFontSize,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                },
               ],
             ),
           ),
