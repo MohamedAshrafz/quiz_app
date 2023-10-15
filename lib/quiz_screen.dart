@@ -56,7 +56,7 @@ class QuizScreenState extends State<QuizScreen> {
             ),
           ),
           const SizedBox(height: questionTitleSpacing),
-          ...currentQuestion.getShuffledList().map(
+          ...currentQuestion.shuffledList.map(
             (choice) {
               int answerIndex = currentQuestion.choices.indexOf(choice);
               return SizedBox(
