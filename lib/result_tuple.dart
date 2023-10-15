@@ -47,8 +47,7 @@ class ResultTuple extends StatelessWidget {
               ),
             ),
           ),
-          LimitedBox(
-            maxWidth: 280,
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
