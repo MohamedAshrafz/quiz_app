@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 const appColorGradientList = [
-  Color.fromARGB(255, 111, 14, 145),
-  Color.fromARGB(255, 152, 67, 219),
+  Color.fromARGB(255, 98, 13, 150),
+  Color.fromARGB(255, 98, 13, 150),
+  // Color.fromARGB(255, 128, 55, 182),
   // Color.fromARGB(255, 109, 66, 219),
   // Color.fromARGB(255, 84, 66, 219),
 ];
@@ -15,8 +16,11 @@ const appBoxDecoration = BoxDecoration(
   ),
 );
 
-const Color primaryButtonsColor = Color.fromARGB(255, 80, 0, 122);
-const Color textColor = Color.fromARGB(255, 234, 219, 245);
+const Color primaryButtonsColor = Color.fromARGB(255, 60, 0, 100);
+const Color textColor = Color.fromARGB(217, 255, 255, 255);
+
+const Color redResult = Color.fromARGB(255, 250, 160, 160);
+const Color greenResult = Color.fromARGB(255, 90, 200, 90);
 
 const double homeScreenChildrenSpacing = 25.0;
 const double questionTitleSpacing = 25.0;

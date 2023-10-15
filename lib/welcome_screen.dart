@@ -5,10 +5,10 @@ import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/main_screens_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key, required this.onStartQuiz});
+
   // final VoidCallbackAction startQuizButtonHandlers;
   final void Function(ScreenType) onStartQuiz;
-
-  const WelcomeScreen({super.key, required this.onStartQuiz});
 
   @override
   Widget build(BuildContext context) {
