@@ -18,7 +18,7 @@ class ResultTuple extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool answeredRight = answerIndex == 0;
+    bool isAnsweredRight = answerIndex == 0;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
@@ -32,8 +32,8 @@ class ResultTuple extends StatelessWidget {
             margin: const EdgeInsets.only(right: 10),
             child: CustomPaint(
               painter: _CirclePainter(
-                radius: resultTupleCircleRadius,
-                fillColor: answeredRight ? greenResult : redResult,
+                circleRadius: resultTupleCircleRadius,
+                fillColor: isAnsweredRight ? greenResult : redResult,
               ),
               child: Center(
                 child: Text(
@@ -62,12 +62,12 @@ class ResultTuple extends StatelessWidget {
                 Text(
                   question.choices[answerIndex],
                   style: GoogleFonts.lato(
-                    color: answeredRight ? greenResult : redResult,
+                    color: isAnsweredRight ? greenResult : redResult,
                     fontSize: resultTupleSmallFontSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                if (!answeredRight) ...{
+                if (!isAnsweredRight) ...{
                   Text(
                     question.choices[0],
                     style: GoogleFonts.lato(
@@ -87,9 +87,9 @@ class ResultTuple extends StatelessWidget {
 }
 
 class _CirclePainter extends CustomPainter {
-  _CirclePainter({required this.radius, required this.fillColor});
+  _CirclePainter({required this.circleRadius, required this.fillColor});
 
-  final double radius;
+  final double circleRadius;
   final Color fillColor;
 
   @override
@@ -97,7 +97,7 @@ class _CirclePainter extends CustomPainter {
     Paint p1 = Paint();
     p1.color = fillColor;
     p1.style = PaintingStyle.fill;
-    canvas.drawCircle(Offset(radius, radius), radius, p1);
+    canvas.drawCircle(Offset(circleRadius, circleRadius), circleRadius, p1);
     // canvas.drawRect(Rect.fromCenter(center: Offset(50, 50), width: 50, height: 80), p1);
   }
 
