@@ -19,13 +19,9 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int numberOfCorrectAnswers = 0;
-
-    for (var element in finalAnswers) {
-      if (element == 0) {
-        numberOfCorrectAnswers++;
-      }
-    }
+    final int numberOfCorrectAnswers = finalAnswers.where((answerIndex) {
+      return answerIndex == 0 ? true : false;
+    }).length;
 
     return Center(
       child: Column(
