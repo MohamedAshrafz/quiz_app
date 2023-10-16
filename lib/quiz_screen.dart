@@ -49,6 +49,7 @@ class QuizScreenState extends State<QuizScreen> {
           Text(
             currentQuestion.questionText,
             textAlign: TextAlign.center,
+            textDirection: TextDirection.rtl,
             style: GoogleFonts.lato(
               color: textColor,
               fontSize: questionTitleFontSize,

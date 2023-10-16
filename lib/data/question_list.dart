@@ -2,7 +2,7 @@ import 'package:quiz_app/models/quiz_question.dart';
 
 const List<QuizQuestion> questionsList = [
   QuizQuestion(
-    questionText: 'What are the main building blocks of Flutter UIs?',
+    questionText: 'ما هي لبنات بناء برامج Flutter؟',
     choices: [
       'Widgets',
       'Components',
@@ -11,7 +11,7 @@ const List<QuizQuestion> questionsList = [
     ],
   ),
   QuizQuestion(
-    questionText: 'How are Flutter UIs built?',
+    questionText: 'كيف نبني برامح Flutter ؟',
     choices: [
       'By combining widgets in code',
       'By combining widgets in a visual editor',
