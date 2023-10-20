@@ -19,9 +19,8 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int numberOfCorrectAnswers = finalAnswers.where((answerIndex) {
-      return answerIndex == 0 ? true : false;
-    }).length;
+    final int numberOfCorrectAnswers =
+        finalAnswers.where((answerIndex) => answerIndex == 0 ? true : false).length;
 
     return Center(
       child: Column(
@@ -39,7 +38,7 @@ class ResultScreen extends StatelessWidget {
           ),
           Container(
             height: resultScreenListViewHeight,
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(right: 35, left: 35, bottom: 35),
             child: ListView(
               children: questionsList.map((q) {
                 int qIndex = questionsList.indexOf(q);
